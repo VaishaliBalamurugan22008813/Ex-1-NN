@@ -59,35 +59,40 @@ print(df)
 x=df.iloc[:,:-1].values
 print(x)
 ```
-
+```
+#Handling Missing Values
 y=df.iloc[:,-1].values
 print(y)
 print(df.isnull().sum())
-
-
+```
+```
 numeric_df = df.select_dtypes(include=np.number)
 df[numeric_df.columns]=df[numeric_df.columns].fillna(numeric_df.mean().round(1))
 print(df.isnull().sum())
-
+```
+``
 y = df.iloc[:, -1].values
 print(y)
 df.duplicated()
-
-
+```
+```
 if 'Calories' in df.columns:
   print(df['Calories'].describe())
 else:
   print("Column 'Calories' not found in the DataFrame.")
-
+```
+```
 scaler=MinMaxScaler()
 df1=pd.DataFrame(scaler.fit_transform(data))
 print(df1)
-
+```
+```
 X_train,X_test,y_train,y_test=train_test_split(x,y,test_size=0.2)
 print(X_train)
 print(len(X_train))
 print(X_test)
 print(len(X_test))
+```
 ## OUTPUT:
 SHOW YOUR OUTPUT HERE
 
